@@ -41,6 +41,29 @@ Estas técnicas eficientarán el uso del CPU y de la GPU/TPU para el pre-procesa
 
 ### Optimizando la extracción de datos
 
+La extracción de datos se optimiza procesando múltiples archivos de forma concurrente.
+**tf.data.interleave() optimiza el proceso de extracción de datos entrelazando (interleaving) la operación de entrada y salida (I/O) para leer el archivo y el map() para aplica el pre-procesamiento de datos**
+
+[Source:https://www.tensorflow.org/guide/data_performance#parallelizing_data_extraction]('../img/tfdata_3.png')
+
+El número de superposición es especificado por el argumento **cycle_length**, mientras que el nivel de paralelismo es establecido por el argumento **num_parallel_calls**.
+
+**num_parallel_calls genera múltiples hilos para utilizar múltiples núcleos en el proceso de extracción de datos en paralelo utilizando múltiples CPUs**
+
+***¿Cómo saber cuántos CPUs o núcleos utilizar***
+
+Puedes encontrar el número de núcleos que tiene tu CPU y especificar ese número, pero una mejor opción es delegar ese nivel de paralelismo a tf.data utilizando **tf.data.experimental.AUTOTUNE**
+
+- AUTOTUNE hará que tf.data establezca dinámicamente el valor (de la cantidad de núcleos) en tiempo de ejecución.
+- tf.data encontrará que tanta carga generar sobre el CPU para todas las operaciones que permitan este ajuste.
+- AUTOTUNE decidirá sobre el nivel de paralelismo para el tamaño del buffer, los recursos del CPU, y también para las operaciones de entrada y salida (I/O).
+
+### Transformando datos en paralelo
+
+Image augmentation, parte del pre-procesamiento, ocurre en la CPU. Cada augmentation, normalización, cambio de escala de una imagen, es una operación costosa y puede ralentizar el proceso de entrenamiento.
+
+Que pasaría si mandamos a llamar todas esas operaciones sobre las imagénes utilizando todos los núcleos con el procesamiento en paralelo.
+
 # Descarga de datos
 En este punto ese necesario que sepas que existe una Kaggle API (¡yo tampoco lo podía creer!), gracias a ella podemos
 obtener datasets de Kaggle sin mayor esfuerzo, incluyendo el dataset para este ejercicio.
