@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-numpy = "*"
+numpy = "==1.19.3"
 pillow = "==8.1.0"
 urllib3 = "*"
 matplotlib = "*"
