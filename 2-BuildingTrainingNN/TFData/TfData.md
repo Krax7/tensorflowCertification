@@ -62,7 +62,29 @@ Puedes encontrar el número de núcleos que tiene tu CPU y especificar ese núme
 
 Image augmentation, parte del pre-procesamiento, ocurre en la CPU. Cada augmentation, normalización, cambio de escala de una imagen, es una operación costosa y puede ralentizar el proceso de entrenamiento.
 
-Que pasaría si mandamos a llamar todas esas operaciones sobre las imagénes utilizando todos los núcleos con el procesamiento en paralelo.
+***Que pasaría si mandamos a llamar todas esas operaciones sobre las imagénes utilizando todos los núcleos con el procesamiento en paralelo.***
+
+**tf.data.map() puede recibir una función definida por el usuario conteniendo todas las image augmentations que se quieran aplicar al dataset**
+
+**tf.data.map() tiene un parámetro num_parallel_calls para aprecer múltiples hilos para utilizar múltiples núcleos en la computadora, para hacer que el proceso de utilizar múltiples CPU sea en paralelo**
+
+### Almacenando los datos en caché
+
+**El método cache() permite almacenar la información en un archivo en específico o en memoria**
+
+- Cuando almacenamos los datos en memoria, la primera vez que los datos son iterados, serán almacenados para que, en posteriores iteraciones, sean leídos desde esa misma locación en memoria.
+- Cuando almacenamos los datos en un archivo, incluso la primera iteración sobre los datos será leída desde el archivo.
+- Almacenar en caché produce los mismos elementos en cada iteración, utiliza shuffle() para seleccionar los elementos de forma aleatoria en las iteraciones después de almacenar los datos en caché.
+
+### Obtenga previamente los datos superponiendo el procesamiento y el entrenamiento.
+
+**La función prefetching en tf.data sobrepone el pre-procesamiento de datos y el entrenamiento del modelo. El pre-procesamiento de datos corre un paso delante del entrenamiento**, como se muestra más abajo, lo cual reduce el tiempo total de entrenamiento del modelo.
+
+Imagen
+
+El número de elementos para la captación previa de datos debería ser igual o mayor que el tamaño de la muestra utilizada para un solo paso del entrenamiento. Podemos utilizar AUTOTUNE para solicitar a tf.data que asigne dinámicamente el valor del tamaño del búfer en tiempo de ejecución.
+
+**Todas las operaciones: map, prefetch, interleave, batch, repeat, shuffle, y almacenar el caché son parte de tf.data lo que permite que puedas construir**
 
 # Descarga de datos
 En este punto ese necesario que sepas que existe una Kaggle API (¡yo tampoco lo podía creer!), gracias a ella podemos
