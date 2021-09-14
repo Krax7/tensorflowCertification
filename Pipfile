@@ -10,6 +10,7 @@ urllib3 = "*"
 matplotlib = "*"
 torch = "*"
 kaggle = "*"
+pandas = "*"
 
 [dev-packages]
 ipykernel = "*"
