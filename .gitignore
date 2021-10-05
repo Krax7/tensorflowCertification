@@ -130,3 +130,5 @@ dmypy.json
 
 # IDE folders
 .idea
+
+3-ImageClassification/data/mnist.npz
