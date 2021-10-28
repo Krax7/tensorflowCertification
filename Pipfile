@@ -12,6 +12,7 @@ torch = "*"
 kaggle = "*"
 pandas = "*"
 jinja2 = "*"
+js2py = "*"
 
 [dev-packages]
 ipykernel = "*"
