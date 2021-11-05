@@ -13,6 +13,7 @@ kaggle = "*"
 pandas = "*"
 jinja2 = "*"
 js2py = "*"
+gdown = "*"
 
 [dev-packages]
 ipykernel = "*"
