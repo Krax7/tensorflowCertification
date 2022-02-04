@@ -90,4 +90,5 @@ El número de elementos para la captación previa de datos debería ser igual o 
 En este punto ese necesario que sepas que existe una Kaggle API (¡yo tampoco lo podía creer!), gracias a ella podemos
 obtener datasets de Kaggle sin mayor esfuerzo, incluyendo el dataset para este ejercicio.
 - [Instrucciones para instalar la API y crear tu credenciales](https://github.com/Kaggle/kaggle-api)
+- Lo buscamos con `kaggle datasets list -s dogs-vs-cats`
 - Descarga al dataset con el siguiente comando: `kaggle competitions download -c dogs-vs-cats`
