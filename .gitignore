@@ -131,4 +131,7 @@ dmypy.json
 # IDE folders
 .idea
 
+# Large files shouldn't upload
 3-ImageClassification/data/mnist.npz
+4-NaturalLanguageProcessing/data/training_cleaned.csv
+4-NaturalLanguageProcessing/data/glove.6B.100d.txt
