@@ -1,0 +1,45 @@
+split_time= 2500
+window_size = 23 (2 años),
+window_size = 34 (3 años),
+window_size = 60 (4 años) epoch: 23 mae: 1.9997,
+window_size = 72 (5 años) epoch: 24 mae: 1.9954 mae_final: 1.8492
+----
+split_time= 2500
+window_size=84 (6 años), batch_size=32
+epochs= 500
+loss: 1.4584 - mae: 1.8965
+----
+split_time= 2500
+window_size=96 (7 años), batch_size=32
+epochs= 500
+loss: 1.4442 - mae: 1.8811
+----
+split_time= 2500
+window_size=96 (7 años), batch_size=32
+epochs= 500
+tf.keras.layers.LSTM(80, return_sequences=True),
+loss: 1.4031 - mae: 1.8392
+----
+split_time= 2500
+window_size=108 (8 años), batch_size=32
+epochs= 500
+tf.keras.layers.LSTM(70, return_sequences=True),
+loss: 1.3876 - mae: 1.8211
+----
+split_time= 2500
+window_size=108 (8 años), batch_size=32
+epochs= 500
+tf.keras.layers.LSTM(60, return_sequences=True),
+loss: 1.3924 - mae: 1.8258
+----
+split_time= 2500
+window_size=114 (8 años y medio), batch_size=32
+epochs= 500, filters=70
+tf.keras.layers.LSTM(70, return_sequences=True),
+loss: 1.3695 - mae: 1.8013
+----
+split_time= 3150
+window_size=108 (8 años), batch_size=32
+epochs= 500, filters=70
+tf.keras.layers.LSTM(70, return_sequences=True),
+loss: 1.3609 - mae: 1.7923
