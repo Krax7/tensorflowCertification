@@ -132,6 +132,7 @@ dmypy.json
 .idea
 
 # Large files shouldn't upload
-3-ImageClassification/data/mnist.npz
+3-ImageClassification/data
+3-ImageClassification/tmp
 4-NaturalLanguageProcessing/data/training_cleaned.csv
 4-NaturalLanguageProcessing/data/glove.6B.100d.txt
