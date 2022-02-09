@@ -1,17 +1,3 @@
-# ======================================================================
-# There are 5 questions in this exam with increasing difficulty from 1-5.
-# Please note that the weight of the grade for the question is relative
-# to its difficulty. So your Category 1 question will score significantly
-# less than your Category 5 question.
-#
-# Don't use lambda layers in your model.
-# You do not need them to solve the question.
-# Lambda layers are not supported by the grading infrastructure.
-#
-# You must use the Submit and Test model button to submit your model
-# at least once in this category before you finally submit your exam,
-# otherwise you will score zero for this category.
-# ======================================================================
 #
 # Getting Started Question
 #
@@ -30,7 +16,7 @@ def solution_model():
     ys = np.array([-4.0, 1.0, 6.0, 11.0, 16.0, 21.0], dtype=float)
 
     # YOUR CODE HERE
-    
+
     return model
 
 # Note that you'll need to save your model as a .h5 like this.
