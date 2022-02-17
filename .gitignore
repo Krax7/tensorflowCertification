@@ -130,6 +130,7 @@ dmypy.json
 
 # IDE folders
 .idea
+.DS_Store
 
 # Large files shouldn't upload
 3-ImageClassification/data
