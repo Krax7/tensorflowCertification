@@ -28,7 +28,6 @@ from tensorflow.keras.layers import Embedding, LSTM, Dense, Dropout, Bidirection
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
-### YOUR CODE HERE
 # Figure out how to import regularizers
 from tensorflow.keras import regularizers
 ###
@@ -75,41 +74,27 @@ predictors, label = input_sequences[:,:-1],input_sequences[:,-1]
 
 label = ku.to_categorical(label, num_classes=total_words)
 
-### START CODE HERE
-model = Sequential()
 """
-Embedding Layer
+Construye una red neuronal que utilice al menos:
+1 capa de Embedding
+1 capa de LSTM Bidirectional
+1 capa de Dropout
+1 capa de LSTM
+1 capa oculta con regularizadores de la siguiente forma:
 
-Turns positive integers (indexes) into dense vectors of fixed size.
-
-e.g. [[4], [20]] -> [[0.25, 0.1], [0.6, -0.2]]
-
-This layer can only be used as the first layer in a model.
-
-Arguments
-input_dim: Integer. Size of the vocabulary, i.e. maximum integer index + 1.
-output_dim: Integer. Dimension of the dense embedding.
-input_length: Length of input sequences, when it is constant. This argument is required if you are going to connect
-Flatten then Dense layers upstream (without it, the shape of the dense outputs cannot be computed).
-
-Input shape
-2D tensor with shape: (batch_size, input_length).
-
-Output shape
-3D tensor with shape: (batch_size, input_length, output_dim).
-"""
-model.add(Embedding(total_words, 100, input_length=max_sequence_len-1)) # Segundo arg: dimensionalidad del embedding, arbitrario.
-model.add(Bidirectional(LSTM(150, return_sequences=True)))
-model.add(Dropout(0.2))
-model.add(LSTM(100))
 model.add(Dense(total_words/2,
 				kernel_regularizer=regularizers.l1_l2(l1=1e-5, l2=1e-4),
 				bias_regularizer=regularizers.l2(1e-4),
 				activity_regularizer=regularizers.l2(1e-5),
 				activation='relu'))
-model.add(Dense(total_words, activation='softmax'))
+    
+1 capa de salida de tamaño total_words
+"""
+### START CODE HERE
+model = Sequential()
+
 # Pick an optimizer
-model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
 ### END CODE HERE
 
 print(model.summary())
@@ -133,17 +118,24 @@ plt.legend()
 
 plt.show()
 
+"""
+Construye un ciclo que te permita tokenizar la frase de entrada (seed_text) y obtener
+la cantidad de palabras siguientes dada por next_words
+
+Recuerda utilizar model.predict y las funciones text to sequences y pad_sequences
+"""
 seed_text = "Help me Obi Wan Kenobi, you're my only hope"
 next_words = 100
-  
+
 for _ in range(next_words):
-	token_list = tokenizer.texts_to_sequences([seed_text])[0]
-	token_list = pad_sequences([token_list], maxlen=max_sequence_len-1, padding='pre')
-	predicted = model.predict_classes(token_list, verbose=0)
+	token_list = # YOUR CODE HERE
+	token_list = # YOUR CODE HERE
+	predicted = # YOUR CODE HERE
 	output_word = ""
 	for word, index in tokenizer.word_index.items():
 		if index == predicted:
 			output_word = word
 			break
 	seed_text += " " + output_word
+
 print(seed_text)
