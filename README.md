@@ -15,3 +15,12 @@ El [manual de TensorFlow Developer Certificate](https://www.tensorflow.org/extra
 - TensorFlow 2.x (se instala dentro de PyCharm mediante un plugin).
 
 Consulta instrucciones detalladas y completas sobre la instalación [aquí](https://www.tensorflow.org/extras/cert/Setting_Up_TF_Developer_Certificate_Exam.pdf)
+
+# Contenido
+## [TensorFlow Developer Skills](https://github.com/Krax7/tensorflowCertification/tree/master/1-TensorflowDeveloperSkills)
+- [Ejercicio de categoría 1 (en blanco)](1-TensorflowDeveloperSkills/Category1.py)
+- [Ejercicio de categoría 1 (solución)](1-TensorflowDeveloperSkills/Category1Solution.py)
+## [Building and Training Neural Networks](https://github.com/Krax7/tensorflowCertification/tree/master/2-BuildingTrainingNN)
+## [Image Classification](https://github.com/Krax7/tensorflowCertification/tree/master/3-ImageClassification)
+## [Natural Language Processing](https://github.com/Krax7/tensorflowCertification/tree/master/4-NaturalLanguageProcessing)
+## [Time Series](https://github.com/Krax7/tensorflowCertification/tree/master/5-TimeSeries)
