@@ -1,4 +1,3 @@
-#
 # Getting Started Question
 #
 # Given this data, train a neural network to match the xs to the ys
