@@ -23,4 +23,6 @@ Consulta instrucciones detalladas y completas sobre la instalación [aquí](http
 ## [Building and Training Neural Networks](https://github.com/Krax7/tensorflowCertification/tree/master/2-BuildingTrainingNN)
 ## [Image Classification](https://github.com/Krax7/tensorflowCertification/tree/master/3-ImageClassification)
 ## [Natural Language Processing](https://github.com/Krax7/tensorflowCertification/tree/master/4-NaturalLanguageProcessing)
+- Colabs de Udacity
+  - [Using LSTMs with Subwords](https://colab.sandbox.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l10c01_nlp_lstms_with_reviews_subwords_dataset.ipynb)
 ## [Time Series](https://github.com/Krax7/tensorflowCertification/tree/master/5-TimeSeries)
